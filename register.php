@@ -22,6 +22,8 @@ if (isset($_POST['submit'])) {
       ':username' => $username,
       ':mypassword' => password_hash($password, PASSWORD_DEFAULT)
     ]);
+
+    echo '<script>alert("Form submitted")</script>';
   }
 }
 ?>
