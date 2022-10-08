@@ -23,6 +23,12 @@
 // and use the password_verify function
 
 
+// if sesssion is unsetgo back to index
+if (isset($_SESSION['username'])) {
+  header("Location: index.php");
+}
+
+
 if (isset($_POST['submit'])) {
   //
   if ($_POST['email'] == '' or $_POST['password'] == '') {
@@ -55,27 +61,36 @@ if (isset($_POST['submit'])) {
   }
 }
 
-
-
 ?>
+<div class="grid">
+ <div></div>
+ <div>
 
-<main class="form-signin w-50 m-auto">
- <form method="POST" action="login.php">
-  <!-- <img class="mb-4 text-center" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-  <h1 class="h3 mt-5 fw-normal text-center">Please login in</h1>
+  <article>
+   <hgroup>
+    <h1>Login</h1>
+    <h2>Please login here</h2>
+   </hgroup>
 
-  <div class="form-floating">
-   <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-   <label for="floatingInput">Email address</label>
-  </div>
+   <form method="POST" action="login.php">
+    <!-- <img class="mb-4 text-center" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
 
-  <div class="form-floating">
-   <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
-   <label for="floatingPassword">Password</label>
-  </div>
+    <div>
+     <input name="email" type="email" class="form-control" placeholder="Email address" autocomplete="email">
 
-  <button name="submit" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-  <h6 class="mt-3">Don't have an account <a href="register.php">Create your account</a></h6>
- </form>
-</main>
+    </div>
+
+    <div>
+     <input name="password" type="password" class="form-control" placeholder="Password" autocomplete="current-password">
+
+    </div>
+
+    <button name="submit" class="contrast" type="submit">Sign in</button>
+    <h6>Don't have an account <a href="register.php">Create your account</a></h6>
+   </form>
+  </article>
+
+ </div>
+ <div></div>
+</div>
 <?php require "includes/footer.php"; ?>
