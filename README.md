@@ -1,6 +1,6 @@
 # auth-system
 
-![My Image](img/auth-sys1.jpg)
+![My Image](img/auth-sys1.png)
 
 
 
