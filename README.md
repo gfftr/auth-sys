@@ -10,4 +10,4 @@ session_unset();
 session_destroy();
 ```
 
-## update soon
+## update readme file
