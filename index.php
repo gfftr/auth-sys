@@ -1,17 +1,17 @@
  <?php require "includes/header.php"; ?>
-<?php
- require "config.php";
-$data = $conn->query("SELECT * FROM tasks");
+ <?php
+  require "config.php";
+  $data = $conn->query("SELECT * FROM tasks");
 
-?> 
+  ?>
 
  <div class="grid">
   <div></div>
   <div>
 
    <article>
-       <h1>Login area </h1>
-     <h5>Welcome <?php echo $_SESSION['username']; ?></h5>
+    <h1>Login area </h1>
+    <h5>Welcome <?php echo $_SESSION['username']; ?></h5>
     <form method="POST" action="insert.php" class="form-inline" id="user_form">
      <div class="form-group mx-sm-3 mb-2">
       <label for="inputPassword2" class="sr-only">create</label>
@@ -32,9 +32,9 @@ $data = $conn->query("SELECT * FROM tasks");
 
 
      <tbody>
-<?php while($rows = $data->fetch(
- PDO::FETCH_OBJ
-)):?>
+      <?php while ($rows = $data->fetch(
+              PDO::FETCH_OBJ
+            )) : ?>
 
       <tr>
        <td><?php echo $rows->id; ?></td>
